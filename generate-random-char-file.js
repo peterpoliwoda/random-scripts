@@ -3,11 +3,6 @@ const charLimit = process.argv[2] || 18588430;
 const fileName = process.argv[3] || '18mbs.please';
 const helpParams = ['help', '-h', '--help', '-help'];
 
-// print process.argv
-process.argv.forEach(function (val, index, array) {
-    console.log(index + ': ' + val);
-});
-
 function generateRandomChars() {
     var text = '';
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -24,12 +19,10 @@ function generateRandomCharFile() {
 }
 
 function showHelp() {
-    console.log('### RANDOM CHAR FILE GENERATOR ###');
-    console.log('\n');
+    console.log('### RANDOM CHAR FILE GENERATOR ### \n');
     console.log('Usage: ');
     console.log('$ node generate-random-char-file.js [charNumberLimit] [fileName]');
-    console.log('$ ...  --help     Show this help');
-    console.log('\n');
+    console.log('$ ...  --help     Show this help \n');
 }
 
 if (process.argv[2] && ~helpParams.indexOf(process.argv[2])) {
